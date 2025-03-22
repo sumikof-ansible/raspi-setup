@@ -1,0 +1,1 @@
+# raspbery pi common setup
