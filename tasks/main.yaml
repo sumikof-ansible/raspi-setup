@@ -1,0 +1,13 @@
+- name: apt update
+  apt:
+    update_cache: yes
+
+- name: setup poe fan
+  blockinfile:
+    path: /boot/firmware/config.txt
+    block: |
+      dtoverlay=rpi-poe-plus
+      dtparam=poe_fan_temp0=50000,poe_fan_temp0_hyst=2000
+      dtparam=poe_fan_temp1=60000,poe_fan_temp1_hyst=2000
+      dtparam=poe_fan_temp2=70000,poe_fan_temp2_hyst=2000
+      dtparam=poe_fan_temp3=80000,poe_fan_temp3_hyst=5000
